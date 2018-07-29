@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+set -u
+set -x
+
+source ./sourceme
+
+./train_coordinates.py --annotation-list ../config/train_annotation_list --project-path "${PROJECT_PATH}/" --save-dir "E:/MHDO_Tracking/data/Janelia_Q2_2015/20150501_MPEG4_NoOdor/Clips/Annotations_And_Frames_Continuos/Train/coordinates/"

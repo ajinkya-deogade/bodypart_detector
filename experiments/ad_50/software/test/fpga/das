@@ -1,0 +1,59 @@
+are_all_servers_free = False
+            while ( not are_all_servers_free ):
+                for s in range(0, n_server):
+                    if ( not server_free[s] ):
+                        # Receive data from the server
+                        bodypart_coords_est = None
+                        try:
+                            # socks[s].settimeout(1/1000.0)
+                            received = socks[s].recv(unpacker_ack_header.size)
+                            ack_header = unpacker_ack_header.unpack(received)
+                            if ( options.verbosity >= 1 ):
+                                print "received a packet from server; packet header:", ack_header[0]
+                            received = socks[s].recv(ack_header[1])
+                            server_free[s] = True
+                            if ( options.verbosity >= 1 ):
+                                print "Received from server {} : {}".format(s, received)
+                            received_json = json.loads(received)
+
+                            if ( "detections" in received_json ):
+                                for di in range(0, len(received_json["detections"])):
+                                    if ( "test_bodypart" in received_json["detections"][di] and received_json["detections"][di]["test_bodypart"] == test_bodypart ):
+                                        bodypart_coords_est = {}
+                                        bodypart_coords_est["x"] = received_json["detections"][di]["coord_x"]
+                                        bodypart_coords_est["y"] = received_json["detections"][di]["coord_y"]
+                                        bodypart_coords_est["conf"] = received_json["detections"][di]["conf"]
+                                        bodypart_coords_est["frame_index"] = received_json["detections"][di]["frame_index"]
+
+                        except socket.timeout:
+                            pass
+                        except:
+                            print "Unexpected error while receiving:", sys.exc_info()[0]
+
+                        if (bodypart_coords_est is not None):
+                            error_stats = Error_Stats()
+                            error_stats.frame_file =  bodypart_gt[bodypart_coords_est["frame_index"]]["frame_file"]
+                            error_stats.error_distance = np.sqrt(np.square(bodypart_gt[bodypart_coords_est["frame_index"]]["bodypart_coords_gt"]["x"] - bodypart_coords_est["x"]) +
+                                                                 np.square(bodypart_gt[bodypart_coords_est["frame_index"]]["bodypart_coords_gt"]["y"] - bodypart_coords_est["y"]))
+                            error_stats.conf = bodypart_coords_est["conf"]
+                            if ( options.verbosity >= 1 ):
+                                print bodypart_gt[bodypart_coords_est["frame_index"]]["frame_file"], "Distance between annotated and estimated RightMHhook location:", error_stats.error_distance
+                            error_stats_all.append(error_stats)
+
+                are_all_servers_free = True
+                for s in range(0, n_server):
+                    if ( not server_free[s] ):
+                        are_all_servers_free = False
+                        break
+
+            header = ('02', 0)
+            packed_header = packer_header.pack(*header)
+
+            for s in range(0, n_server):
+                try:
+                    socks[s].setblocking(1)
+
+                    socks[s].sendall(packed_header)
+                except:
+                    print "Unexpected error while sending:", sys.exc_info()[0]
+                    return

@@ -1,0 +1,15 @@
+#! /bin/bash
+
+set -e
+set -u
+set -x
+
+source ./sourceme
+
+mkdir -vp ../expts
+
+./detectPos_fromList.py --test-annotation-list '../config/test_annotation_list_fpgaKNNVal' --project-path "${PROJECT_PATH}/" --knn-data-path "${KNN_PATH}/" --mh-neighborhood 50 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 150 --training-bodypart MouthHook --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 7 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256  --display 3 --training-data-file '/Users/Ajinkya/Dropbox (CRG)/SharedStuff_Ajinkya/20160318_FPGA_Validation_TraningData/20160318_031557_MouthHook_trainData.txt'
+#./detectPos_fromList.py --test-annotation-list '../config/test_annotation_list_fpgaKNNVal' --project-path "${PROJECT_PATH}/" --knn-data-path "${KNN_PATH}/" --mh-neighborhood 50 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 150 --training-bodypart LeftMHhook --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 7 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256  --display 3 --training-data-file '/Users/Ajinkya/Dropbox (CRG)/SharedStuff_Ajinkya/20160318_FPGA_Validation_TraningData/20160318_045334_LeftMHhook_trainData.txt'
+#./detectPos_fromList.py --test-annotation-list '../config/test_annotation_list_fpgaKNNVal' --project-path "${PROJECT_PATH}/" --knn-data-path "${KNN_PATH}/" --mh-neighborhood 50 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 150 --training-bodypart RightMHhook --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 7 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256  --display 3 --training-data-file '/Users/Ajinkya/Dropbox (CRG)/SharedStuff_Ajinkya/20160318_FPGA_Validation_TraningData/20160318_063618_RightMHhook_trainData.txt'
+#./detectPos_fromList.py --test-annotation-list '../config/test_annotation_list_fpgaKNNVal' --project-path "${PROJECT_PATH}/" --knn-data-path "${KNN_PATH}/" --mh-neighborhood 50 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 150 --training-bodypart LeftDorsalOrgan --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 7 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256  --display 3 --training-data-file '/Users/Ajinkya/Dropbox (CRG)/SharedStuff_Ajinkya/20160318_FPGA_Validation_TraningData/20160318_081707_LeftDorsalOrgan_trainData.txt'
+#./detectPos_fromList.py --test-annotation-list '../config/test_annotation_list_fpgaKNNVal' --project-path "${PROJECT_PATH}/" --knn-data-path "${KNN_PATH}/" --mh-neighborhood 50 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 150 --training-bodypart RightDorsalOrgan --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 7 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256  --display 3 --training-data-file '/Users/Ajinkya/Dropbox (CRG)/SharedStuff_Ajinkya/20160318_FPGA_Validation_TraningData/20160318_095812_RightDorsalOrgan_trainData.txt'

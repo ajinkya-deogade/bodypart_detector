@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+set -u
+set -x
+
+source ./sourceme
+
+./train_coordinates.py --annotation-list ../config/train_annotation_list --project-path "${PROJECT_PATH}/"

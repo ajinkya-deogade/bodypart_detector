@@ -1,0 +1,31 @@
+## Create KNN Tree using the trained descriptors
+bodypart_knn_pos.train(np.array(bodypart_trained_data_pos.descriptors, dtype=np.float32), bodypart_trained_data_pos.keypoints)
+bodypart_knn_neg.train(np.array(bodypart_trained_data_neg.descriptors, dtype=np.float32), bodypart_trained_data_neg.keypoints)
+
+## Create a vote patch used during voting
+bodypart_vote = np.zeros((2 * options.vote_patch_size + 1, 2 * options.vote_patch_size + 1, 1), np.float)
+
+    for x in range(-options.vote_patch_size, options.vote_patch_size + 1):
+        for y in range(-options.vote_patch_size, options.vote_patch_size + 1):
+            bodypart_vote[y + options.vote_patch_size, x + options.vote_patch_size] = 1.0 + np.exp(
+                -0.5 * (x * x + y * y) / (np.square(options.vote_sigma))) / (options.vote_sigma * np.sqrt(2 * np.pi))
+
+
+## Find the Nearest Neighbour Descriptor from positive as well as negative training data
+for h, desc in enumerate(desc_frame):
+    desc = np.array(desc, np.float32).reshape((1, 128))
+    retval_pos, results_pos, neigh_resp_pos, dists_pos = bodypart_knn_pos.find_nearest(desc, 1)
+    retval_neg, results_neg, neigh_resp_neg, dists_neg = bodypart_knn_neg.find_nearest(desc, 1)
+    r_pos, d_pos = int(results_pos[0][0]), dists_pos[0][0]
+    r_neg, d_neg = int(results_neg[0][0]), dists_neg[0][0]
+    relative_distance = d_pos - d_neg
+
+## Voting by the selected keypoints
+    if (relative_distance <= options.desc_distance_threshold):
+        a = kp_frame[h].angle
+        R = np.array([[np.cos(a), -np.sin(a)], [np.sin(a), np.cos(a)]])
+        p = kp_frame[h].pt + np.dot(R, bodypart_trained_data_pos.votes[r_pos])
+        x, y = p
+        if (not (x <= options.vote_patch_size or x >= np.shape(frame)[1] - options.vote_patch_size or y <= options.vote_patch_size or y >= np.shape(frame)[0] - options.vote_patch_size)):
+            bodypart_vote_map[y - options.vote_patch_size:y + options.vote_patch_size + 1,
+                              x - options.vote_patch_size:x + options.vote_patch_size + 1] += bodypart_vote

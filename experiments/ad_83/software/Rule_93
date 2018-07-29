@@ -1,0 +1,210 @@
+determineStimulus(List<LarvaFrameData> frameHistory, LarvaBehaviorParameters behaviorParameters) {
+
+        final LarvaFrameData frameData = frameHistory.get(0);
+        final long captureTime = frameData.getTime();
+
+        List<LEDStimulus> stimulusList;
+
+        if (captureTime >= noStimulusStartDuration) {
+
+            final double headAngle = frameData.getHeadAngle();
+            final double absHeadAngle = Math.abs(headAngle);
+
+            // identify if the larva is in strict run or not
+            if (frameData.isRunning()) {
+
+                if (runStartTime == null) {
+                    runStartTime = captureTime;
+                }
+
+                if (! hasRunStrictlyLongEnough) {
+
+                    // run has resumed after previous strict run ended
+
+                    if (currentAdditiveFunction != null) {
+
+                        // check to see if function from previous strict run should continue to be applied
+                        // (avoids drop to baseline intensity during "spurious" runs)
+
+                        final long timeSinceRunStart = captureTime - runStartTime;
+                        if (timeSinceRunStart >= minimumNewRunDurationBeforeReset) {
+                            currentAdditiveFunction = null;
+                            logRuleData(captureTime, STRICT_RUN_NAME, "stop for new run");
+                        }
+                    }
+
+                    // check to see if new strict run has started
+
+                    if ((absHeadAngle >= minAbsoluteHeadAngle) &&
+                        (absHeadAngle <= maxAbsoluteHeadAngle)) {
+
+                        if (strictRunStartTime == null) {
+                            strictRunStartTime = captureTime;
+                        }
+
+                        final long timeSinceStrictRunStart = captureTime - strictRunStartTime;
+
+                        if (timeSinceStrictRunStart >= minimumStrictRunDuration) {
+
+                            // start new strict run
+                            hasRunStrictlyLongEnough = true;
+
+                            final int functionIndex = (int) randomAdditiveFunctionIndexSelector.getValue();
+                            currentAdditiveFunction = additiveFunctionList.get(functionIndex);
+                            logRuleData(captureTime, STRICT_RUN_NAME, "start additive function " + (functionIndex + 1) + " selected");
+
+                            // Changed here to "samplingSweepCount" Want to count number of times the
+                            // head angle crosses the left/right user defined threshold
+
+                            sweepWithinSamplingCount = 0;
+                            samplingLeftAdditiveIntensity = samplingLeftAdditiveIntensityFunction.getValue();
+                            samplingRightAdditiveIntensity = samplingRightAdditiveIntensityFunction.getValue();
+
+                            logRuleData(captureTime, "sampling left additive intensity", String.valueOf(samplingLeftAdditiveIntensity));
+                            logRuleData(captureTime, "sampling right additive intensity", String.valueOf(samplingRightAdditiveIntensity));
+                        }
+
+                    } else { // exited strict run
+                        if (strictRunStartTime != null) {
+                            logRuleData(captureTime, STRICT_RUN_NAME, "reset for abs head angle " + absHeadAngle);
+                        }
+                        strictRunStartTime = null;
+                    }
+
+                }
+
+            }
+
+            if previousSamplingState != null {
+
+                if headAngle >= samplingLeftHeadAngleThreshold {
+                    presentSamplingState = 1; // left side
+
+                } else if headAngle <= samplingRightHeadAngleThreshold {
+                    presentSamplingState = -1; // right side
+
+                } else {
+                    presentSamplingState = 0; // in between left & right thresholds
+
+                }
+
+            } else { // if entering the sampling for the first time
+
+                if headAngle >= samplingLeftHeadAngleThreshold {
+                    presentSamplingState = 1; // left side
+
+                } else if headAngle <= samplingRightHeadAngleThreshold {
+                presentSamplingState = -1; // right side
+
+                } else {
+                presentSamplingState = 0; // in between left & right thresholds
+
+                }
+
+                sweepWithinSamplingCount++
+                timePreviousSamplingSweep = 0
+                previousSamplingState = presentSamplingState
+
+            }
+
+            // Now that we've determined whether the larva is strictly running,
+            // sampling while strictly running, or doing something else,
+            // apply the appropriate intensity ...
+
+            if (currentAdditiveFunction == null) { // larva has not recently run strictly
+
+                stimulusList = baselineIntensityStimulusList;
+
+            } else { // larva is running strictly or was recently running strictly
+
+                stimulusList = getStimulusList(baselineIntensityPercentage.getValue());
+
+                if (headAnglePredictionDuration > 0) { // if using prediction
+
+                    final double addForCurrentFrame = currentAdditiveFunction.getValue(frameData.getHeadAngle());
+                    final double nextHeadAngle = SmallAmplitudeHeadCastWithRandomFunctionList.predictNextHeadAngle(frameHistory, headAnglePredictionDuration);
+                    final double addForNextFrame = currentAdditiveFunction.getValue(nextHeadAngle);
+                    final double addDelta = addForNextFrame - addForCurrentFrame;
+
+                    // assumes "off" LEDFlashPattern elements all have 0 duration
+                    final int stimulusCount = stimulusList.size();
+
+                    final double increment;
+                    if (stimulusCount > 1) {
+
+                        increment = addDelta / (stimulusCount - 1);
+
+                    } else {
+
+                        increment = 0; // no need to increment if there is only one stimulus
+
+                    }
+
+                    double additiveIntensity = addForCurrentFrame;
+                    for (LEDStimulus stimulus : stimulusList) {
+
+                        stimulus.addIntensityPercentage(additiveIntensity);
+                        additiveIntensity = additiveIntensity + increment;
+
+                    }
+
+                } else if previousSamplingState != null {  // if not using prediction
+
+                    if (sweepWithinSamplingCount <= maxSamplingFramesBeforeReset) & (timeSincePreviousSamplingSweep <= minInterSweepTimeBeforeReset){
+
+                        final double presentAdditiveIntensity;
+                        if presentSamplingState == 1 { // left side
+                            presentAdditiveIntensity = samplingLeftAdditiveIntensity;
+
+                        } else if {
+                            presentAdditiveIntensity = samplingRightAdditiveIntensity;
+
+                        } else {
+                            presentAdditiveIntensity = previousAdditiveIntensity;
+
+                        }
+
+                    if (presentSamplingState != previousSamplingState) & (presentSamplingState != 0){
+                        sweepWithinSamplingCount++
+
+                    }
+
+                    previousAdditiveIntensity = presentAdditiveIntensity
+                    timePreviousSamplingSweep = captureTime
+
+                    stimulusList = getStimulusList(baselineIntensityPercentage.getValue());
+                    for (LEDStimulus stimulus : stimulusList) {
+                        stimulus.addIntensityPercentage(additiveIntensity);
+
+                        }
+
+                    } else {
+
+                        runStartTime = null;
+                        strictRunStartTime = null;
+                        hasRunStrictlyLongEnough = false;
+                        currentAdditiveFunction = null;
+                        previousSamplingState = null;
+                        logRuleData(captureTime, STRICT_RUN_NAME, "stop after " + sweepWithinSamplingCount + " sampling sweeps");
+
+                    }
+
+                    currentAdditiveFunction.applyValue(frameData, stimulusList, 0);
+
+                } else {
+
+                    stimulusList = baselineIntensityStimulusList;
+
+                }
+
+
+            }
+
+        } else {
+
+            stimulusList = ZERO_INTENSITY_FOR_ONE_SECOND;
+
+        }
+
+        return stimulusList;
+    }

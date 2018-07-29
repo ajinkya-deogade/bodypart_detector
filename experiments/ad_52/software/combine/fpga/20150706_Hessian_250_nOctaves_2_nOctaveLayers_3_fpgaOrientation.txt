@@ -1,0 +1,81 @@
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_1.p
+number of features: 71949
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_2.p
+number of features: 45581
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_3.p
+number of features: 17547
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_4.p
+number of features: 69134
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_5.p
+number of features: 26761
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_6.p
+number of features: 15307
+bodypart: MouthHook
+total number of features: 246279
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_1.p
+number of features: 20402
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_2.p
+number of features: 12532
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_3.p
+number of features: 5737
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_4.p
+number of features: 21644
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_5.p
+number of features: 7018
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_MouthHook_6.p
+number of features: 4175
+bodypart: MouthHook
+total number of features: 71508
+Mouth Hook Done.....
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_RightMHhook_1.p
+number of features: 74305
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_RightMHhook_2.p
+number of features: 38804
+bodypart: RightMHhook
+total number of features: 113109
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_RightMHhook_1.p
+number of features: 57524
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_RightMHhook_2.p
+number of features: 27966
+bodypart: RightMHhook
+total number of features: 85490
+Right DO Done.....
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_RightDO_1.p
+number of features: 25456
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_RightDO_2.p
+number of features: 8957
+bodypart: RightDorsalOrgan
+total number of features: 34413
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_RightDO_1.p
+number of features: 40048
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_RightDO_2.p
+number of features: 13496
+bodypart: RightDorsalOrgan
+total number of features: 53544
+Left Mouth Hook Done.....
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftDO_1.p
+number of features: 25158
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftDO_2.p
+number of features: 9010
+bodypart: LeftDorsalOrgan
+total number of features: 34168
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftDO_1.p
+number of features: 40547
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftDO_2.p
+number of features: 13515
+bodypart: LeftDorsalOrgan
+total number of features: 54062
+Left DO Done.....
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftMHhook_1.p
+number of features: 74186
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_pos_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftMHhook_2.p
+number of features: 38976
+bodypart: LeftMHhook
+total number of features: 113162
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftMHhook_1.p
+number of features: 58154
+loading C:/Users/deogadea/Documents/mhdo/experiments/ad_52/expts/fpga/20150706_Hessian_250_nOctaves_2_nOctaveLayers_3_fpgaOrientation/fragmented/train_neg_Hessian_250_nOctaves_2_nOctaveLayers_3_LeftMHhook_2.p
+number of features: 27634
+bodypart: LeftMHhook
+total number of features: 85788
+Left Mouth Hook Done.....

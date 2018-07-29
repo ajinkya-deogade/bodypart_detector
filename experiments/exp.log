@@ -1,0 +1,252 @@
+sv_1 opencv load and play video
+
+sv_2 tracking initial experiment, template-based, KLT
+
+sv_3 initial experiment with SURF
+
+sv_4 read frame level annotations and display on frame images
+
+sv_5 frame-level MH detection using nearest neighbor voting
+
+sv_6 save image rendering results for frame-level MH detection. Extended from sv_5
+
+ad_1 trial MH-hook detection using sv_5
+
+ad_2 splitting sv_5 into trial and test codes
+
+ad_3 changes in ad_2
+
+ad_3 modified ad_3; modifications: 1. terminal input the bodypart (Mouthhook, RightMHhook, LeftMHhook)
+2. terminal input foldername to save images with predicted bodypart location 3. terminal input filename to save errors in predicted and annotated bodyparts 4. Added filter for (-1,-1) during training and test phase
+
+sv_5 modified sv_5; modifications: 1. terminal input foldername to save images with predicted bodypart location  2. terminal input filename to save errors in predicted and annotated bodyparts 3. Added filter for (-1,-1) during training and test phase
+
+ad_4 copied from ad_3; modifications: ex_MHhook_detection_test.py goes over the train test and saves the error and frames with predicted bodypart location
+
+sv_7 copy of ad_5 which would detect general body point, positive and negative feature points for better discrimination of background/irrelevant feature points. Extension: make it easier to point to different data directories for cross-site dev.
+
+ad_6 copied from sv_7; modification: As after parallelizing the program was not able to save into different directory for a particular video, changed the code to make a new folder to save predicted frames for every video.
+
+Tried out different desc_threshold values (-0.03,-0.02,-0.01,-0.005,-0.0025,0,0.0025,0.005,0.01) and got the respective Number of outlier error distances (Ran with errors,3.264094955,3.264094955,3.264094955, ,2.37388724,2.37388724,3.264094955).
+Important thing to note is for the relative distance of -0.03 the program gave the following error. Maybe because there was no feature point below this threshold.
+
+ad_6; Following error occurring number of times for different videos.
+
+Error:
+101: RuntimeWarning: invalid value encountered in divide
+  bodypart_vote_map /= vote_max
+Traceback (most recent call last):
+  File "./ex_MHhook_detection_test.py", line 206, in <module>
+    main(options, args)
+  File "./ex_MHhook_detection_test.py", line 172, in main
+    results = process_pool.map(detect_bodypart_and_get_error_distances, test_annotations)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+IndexError: index 0 is out of bounds for axis 1 with size 0
+
+ad_5; Same Error as above.
+
+ad_7; copied from ad_6, modified to detect directly from the video.
+
+sv_8 [ABANDONED] extends sv_7 in preparation for online usage. E.g., makes the test code clean in terms of object creation and destruction
+
+jf_1 copy of sv_7 to work JFRC windows machine
+
+sv_9 Initial client server framework. Client pushes a header (version-id, blob-size) followed by byte-blob. The server reads the header, and the variable length blob, converts it upper case and sends it back to client.
+
+sv_10 Client server framework with client sending images.
+
+ad_8; Copied from sv_7; Having following error for different files during training phase
+Traceback (most recent call last):
+  File "./ex_MHhook_detection_train.py", line 179, in <module>
+    main(options, args)
+  File "./ex_MHhook_detection_train.py", line 137, in main
+    results = process_pool.map(get_train_features, train_annotation["Annotations"])
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+/Volumes/HD2/MHDO_Tracking//data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Frames_All5/4_20140213R_Frames_20140605_124137/000151_4_20140213R_033151.tiff
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+ValueError: need more than 0 values to unpack
+
+ad_9; Copied from ad_5; Tried training with normal (not multithreaded)
+Program stops after reading few frames without showing any errors.
+
+sv_11 Client server framework with client sending multiple images at one time to handle the case of one image coming from head and one from tail.
+
+sv_12 Builds upon sv_11. Server performs MH detection (from sv_7).
+
+sv_13 Builds upon sv_12, with multiple parallel servers
+
+sv_14 Builds upon sv_13. possibility to return empty detections. Threshold on vote value to remove low confidence detections. Improves format of message from server to have a header ('01', <length-of-json-ASCII-blob>)
+
+ad_13 Copied from sv_13.
+
+ad_14 Copied from ad_13; Removed the cropping part to work as previous offline detector.
+
+ad_15 Modified from ad_14; Modifications: 1. Read from a video clip; 2. Read the json annotation file for corresponding frame, 3. Carryout interpolation for in between frames,
+
+ad_16 Modified from ad_15; Modifications: Improvement to ad_15
+
+ad_17 Extracts contour and detects head and tail simulating the FPGA
+
+ad_18 Modified from ad_16; Current working code
+
+ad_19 Copied from sv_14;
+
+ad_20 Modified from ad_18; add confidence parameter to the server as in sv_14
+
+sv_15 Modifies sv_14 so as to keep the socket open and avoid repeated open/close of sockets
+
+ad_21 Stamp the detected position on the cropped frame
+
+ad_22 Copied from sv_15
+
+ad_23 Copied from ad_20
+
+sv_13 Builds upon sv_12, multithreaded detection.
+
+sv_15 Modifies sv_14 so as to keep the socket open and avoid repeated open/close of sockets. flann for nearest neighbor search
+
+sv_16 sv_15 but with older, opencv-based, nearest neighbor
+
+sv_17 sv_16 but with opencv's flann
+sv_17.1 measure cpu with higher k in k-NN
+
+ad_27 Copied from ad_9; Fresh list of annotations; For benchmarking
+
+ad_28 Copied from ad_26; Carries out analysis for different descriptor thresholds
+
+ad_29 Copied from ad_26; Able to load multiple training pickle files.
+
+sv_18 merge two training feature sets
+
+ad_33 Modified ad_17: Calculates distance between dorsal organs from the annotated data
+
+sv_19 Copied from ad_27. Training to detect multiple landmarks. Client-server detection. Use comma separated list for training and detecting multiple landmarks.
+
+ad_35: Copied from sv_19
+
+ad_36 Copied from ad_35 to save cropped images
+
+ad_41 Copied from sv_18
+
+ad_39 Copied from sv_15, Computes Detection using FPGA SURF keypoints. Has some serious bugs. Don't Use
+
+ad_42 Copied from sv_17.1
+
+ad_43 Copied from sv_15, Computes Detection using FPGA SURF keypoints. Working Copy.
+
+ad_44 Training using the FPGA keypoints
+
+ad_45 Copied from ad_43. Computes Detection using FPGA SURF keypoints. Working Copy. Improvements to ad_43.
+
+ad_46 Copied from ad_45. Computes Detection using OPENCV SURF keypoints. Working Copy.
+
+ad_47 Training using OpenCV keypoints. Adds feature to take SURF parameters as input.
+
+ad_48 Combines pickle files. Compatible with ad_47.
+
+ad_49 Copied from ad_26.
+
+ad_50 Created for validation of FPGA-SURF: 1. Generates Training dataset for OpenCV(copied from ad_47) and FPGA(copied from ad_44) keypoints, 2. Combines the fragmented pickle files (copied from ad_36), 3. Tests OpenCV and FPGA(ad_45) keypoint performance
+
+ad_51 Carryout the ROC analysis for the predictions. Not Complete !!
+
+ad_52 Integrates the FPGA descriptors; modified from ad_50.(Working copy)
+
+ad_53
+
+ad_54
+
+ad_55 Compare New Annotations with Old Ones: modified from ad_52.(Working copy)
+
+ad_56 Training using multiple landmarks using combined old + new data. Modified from ad_35.
+
+ad_57 Extracts coordinates and stores them in a matrix format
+
+ad_58 Carries out autoregression to predict bodypart location
+
+ad_59 Copied from ad_58. For validation. Shows the image.
+
+ad_60 A trial attempt
+
+ad_61 Copied from ad_52. Creates an API to perform descriptor matching for sidemachine.
+
+ad_62
+
+NOTE: There has been few changes with respect the OpenCV version 3 on macports. Following are the important issues:
+1. cv2.surf now becomes cv2.xfeatures2d.SURF_create
+2. cv2 FLANN has bugs which makes the program crash hence preferred pyflann available on macports.
+
+ad_63 Combines train and test together for multiple bodyparts. Copied from ad_35. Carries out stratified shuffle split of all the data to select the train and test set. Present stable and working version.
+
+ad_64 copied from ad_63. For optimization purposes.(Working copy)
+
+ad_65 copied from ad_59. Also considers the position of the corresponding mouthhook on the same side. Beware: Does not work.
+
+ad_66 copied from ad_64. saving training data into a file for FPGA detection. (Working copy)
+
+ad_67 copied from ad_58. Considers the position of the corresponding mouthhook on the same side
+
+sv_20 [ABANDONED] copied from ad_75
+
+sv_21 [ABANDONED] copied from ad_73
+
+sv_22 [ABANDONED] copied from ad_74
+
+sv_23 copied from updated ad_74. this has both positive and negative feature points.
+
+sv_24 copied from updated sv_23. extrapolate beyound immediately following frame
+
+ad_75 used for training - final
+
+ad_76 copied from sv_23
+
+ad_77
+
+ad_78 modified from ad_15 for validation purposes
+
+ad_79 modified from ad_76 for validation purposes - finally used
+
+ad_80 copied from ad_79 - with carryon the previous detection for inference - finally used
+
+ad_81 copied from ad_79 - corrects the flips
+
+ad_82 copied from ad_80 - with carryon the previous detection for inference - corrects the flips
+
+ad_83 Train classifier using the cross product and number of votes
+
+ad_84 Used for comparing FPGA and Python errors. Saves a table in FPGA metadata format.
+
+ad_85 Copied from ad_84. Used for analyzing errors in continuity applies inference.
+
+ad_86 Copied from ad_64. Dump the frames where not detected good.
+
+ad_87 Copied from ad_66. Create FPGA training data without images.
+
+ad_88 Stamp FPGA and Python detections on the frame.
+
+ad_89 Copied from ad_66. Trains and saves 3 data: 1. Only positive, 2. only negative, 3. pos + neg. Here the negatiad_98 Copied from ad_92. Splits the data into different combinations training and test pairs.ve training data is the one with no annotation
+
+ad_90
+
+ad_91 Copied from ad_79. Used for training and testing on same data for python only.
+
+ad_92 Copied from ad_91. Used for training and testing on same data for FPGA only.
+
+ad_93 trial experiment
+
+ad_94 Copied from ad_91. Trial with different KNNs. Save the frames which lead to wrong detection in train and test on same frame.
+
+ad_95 Copied from sv_2.
+
+ad_96 Trial with Kalman filter.
+
+ad_97 Combine existing dorsal organ JSON file with newly generated bolwig organ JSON file to create new file.
+
+ad_98 Copied from ad_92. Splits the data into different combinations training and test pairs.
+
+ad_99 Process FPGA train table in different ways

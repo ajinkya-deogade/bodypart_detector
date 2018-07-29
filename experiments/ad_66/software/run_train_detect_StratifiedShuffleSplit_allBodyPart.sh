@@ -1,0 +1,15 @@
+#! /bin/bash
+
+set -e
+set -u
+set -x
+
+source ./sourceme
+
+./train_detect_StratifiedShuffleSplit_allBodyPart.py --train-annotation-list-all ../config/temp_2 --project-path "${PROJECT_PATH}/" --mh-neighborhood 50 --display 0 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 200 --training-bodypart MouthHook,LeftMHhook,RightMHhook,LeftDorsalOrgan,RightDorsalOrgan --pos-neg-equal 0 --desc-dist-threshold 0 --vote-patch-size 7 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256 --fpga-dir-kp "${KEYPOINTS_DIR}/" --fpga-dir-desc "${DESCRIPTORS_DIR}"
+
+#./train_detect_StratifiedShuffleSplit_perBodyPart.py --train-annotation-list-all ../config/annotation_list_old_new_all_forStratifiedForFPGA --project-path "${PROJECT_PATH}/" --mh-neighborhood 50 --display 0 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 250 --training-bodypart LeftMHhook --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 10 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256 --fpga-dir-kp "${KEYPOINTS_DIR}/" --fpga-dir-desc "${DESCRIPTORS_DIR}"
+#./train_detect_StratifiedShuffleSplit_perBodyPart.py --train-annotation-list-all ../config/annotation_list_old_new_all_forStratifiedForFPGA --project-path "${PROJECT_PATH}/" --mh-neighborhood 50 --display 0 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 250 --training-bodypart LeftMHhook --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 10 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256 --fpga-dir-kp "${KEYPOINTS_DIR}/" --fpga-dir-desc "${DESCRIPTORS_DIR}"
+#./train_detect_StratifiedShuffleSplit_perBodyPart.py --train-annotation-list-all ../config/annotation_list_old_new_all_forStratifiedForFPGA --project-path "${PROJECT_PATH}/" --mh-neighborhood 50 --display 0 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 250 --training-bodypart RightMHhook --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 10 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256 --fpga-dir-kp "${KEYPOINTS_DIR}/" --fpga-dir-desc "${DESCRIPTORS_DIR}"
+#./train_detect_StratifiedShuffleSplit_perBodyPart.py --train-annotation-list-all ../config/annotation_list_old_new_all_forStratifiedForFPGA --project-path "${PROJECT_PATH}/" --mh-neighborhood 50 --display 0 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 250 --training-bodypart LeftDorsalOrgan --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 10 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256 --fpga-dir-kp "${KEYPOINTS_DIR}/" --fpga-dir-desc "${DESCRIPTORS_DIR}"
+#./train_detect_StratifiedShuffleSplit_perBodyPart.py --train-annotation-list-all ../config/annotation_list_old_new_all_forStratifiedForFPGA --project-path "${PROJECT_PATH}/" --mhgit status-neighborhood 50 --display 0 --nOctaves 2 --nOctaveLayers 3 --hessian-threshold 250 --training-bodypart RightDorsalOrgan --pos-neg-equal 1 --desc-dist-threshold 0 --vote-patch-size 10 --vote-sigma 5 --vote-threshold 0 --outlier-error-dist 10 --crop-size 256 --fpga-dir-kp "${KEYPOINTS_DIR}/" --fpga-dir-desc "${DESCRIPTORS_DIR}"

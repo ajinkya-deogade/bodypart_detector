@@ -1,0 +1,216 @@
+#! /usr/bin/env python
+
+from optparse import OptionParser
+import json
+from pprint import pprint
+import cv2
+import os
+import re
+import numpy as np
+import pickle
+
+if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option("", "--test-annotation", dest="test_annotation_file", default="",help="frame level testing annotation JSON file")
+    parser.add_option("", "--test-annotation-list", dest="test_annotation_list_fpgaKNNVal", default="",help="list of testing annotation JSON file")
+    parser.add_option("", "--project-path", dest="project_dir", default="", help="path containing data directory")
+    parser.add_option("", "--positive-training-datafile", dest="train_data_p", help="File to save the information about the positive training data")
+    parser.add_option("", "--negative-training-datafile", dest="train_data_n", help="File to save the information about the negative training data")
+    parser.add_option("", "--desc-dist-threshold", dest="desc_distance_threshold", type="float", default=0.1,help="threshold on distance between test descriptor and its training nearest neighbor to count its vote")
+    parser.add_option("", "--vote-patch-size", dest="vote_patch_size", type="int", default=15,help="half dimension of the patch within which each test descriptor casts a vote, the actual patch size is 2s+1 x 2s+1")
+    parser.add_option("", "--vote-sigma", dest="vote_sigma", type="float", default=3.0,help="spatial sigma spread of a vote within the voting patch")
+    parser.add_option("", "--outlier-error-dist", dest="outlier_error_dist", type="int", default=15,help="distance beyond which errors are considered outliers when computing average stats")
+    parser.add_option("", "--display", dest="display_level", default=0, type="int",help="display intermediate and final results visually, level 5 for all, level 1 for final, level 0 for none")
+    parser.add_option("", "--save-dir-images", dest="save_dir_images", default="", help="directory to save result visualizations, if at all")
+    parser.add_option("", "--save-dir-error", dest="save_dir_error", default="", help="directory to save errors, if at all")
+
+    (options, args) = parser.parse_args()
+
+    #with open(options.test_annotation_file) as fin_annotation:
+        #test_annotation = json.load(fin_annotation)
+
+    # surf = cv2.SURF(400, nOctaves=4, nOctaveLayers=4)
+    surf = cv2.SURF(500, nOctaves=3, nOctaveLayers=3)
+    class SaveClass:
+        def __init__(self):
+            self.votes = None
+            self.keypoints = None
+            self.descriptors = None
+            self.bodypart = None
+
+    error_file = {"num_outliers": 0,"outlier_error_thresh": 0,"proportion_outliers": 0,"median_error_dist": 0,"mean_error_dist": 0,"frames_evaluated": 0}
+    bodypart_knn_pos = cv2.KNearest()
+    bodypart_knn_neg = cv2.KNearest()
+    keypoint_length = []
+    pos_kp_length = []
+    neg_kp_length = []
+    total_kp_length = []
+
+    bodypart_trained_data_pos = SaveClass()
+    bodypart_trained_data_pos = pickle.load(open(options.train_data_p, 'rb'))
+    bodypart_trained_data_neg = SaveClass()
+    bodypart_trained_data_neg = pickle.load(open(options.train_data_n, 'rb'))
+
+    bodypart_knn_pos = cv2.flann_Index(bodypart_trained_data_pos.descriptors, dict(algorithm=1, trees=4))
+    bodypart_knn_neg = cv2.flann_Index(bodypart_trained_data_neg.descriptors, dict(algorithm=1, trees=4))
+
+    vote_train_pos = bodypart_trained_data_pos.votes
+    bodypart_desc_train_samples_pos = bodypart_trained_data_pos.descriptors
+    bodypart_kp_train_responses_pos = bodypart_trained_data_pos.keypoints
+
+    vote_train_neg = bodypart_trained_data_neg.votes
+    bodypart_desc_train_samples_neg = bodypart_trained_data_neg.descriptors
+    bodypart_kp_train_responses_neg = bodypart_trained_data_neg.keypoints
+    test_bodypart = bodypart_trained_data_neg.bodypart
+
+    # bodypart_knn_pos.train(bodypart_desc_train_samples_pos, bodypart_kp_train_responses_pos)
+    # bodypart_knn_neg.train(bodypart_desc_train_samples_neg, bodypart_kp_train_responses_neg)
+
+    with open(options.test_annotation_list) as fin_annotation_list:
+        for test_annotation_file in fin_annotation_list:
+            test_annotation_file = os.path.join(options.project_dir,re.sub(".*/data/", "data/", test_annotation_file.strip()))
+            with open(test_annotation_file) as fin_annotation:
+                test_annotation = json.load(fin_annotation)
+            print "Working on file: ",test_annotation_file
+            bodypart_error_dists = []
+            bodypart_n_outlier_error_dist = 0
+            bodypart_n_eval = 0
+            bodypart_vote = np.zeros((2 * options.vote_patch_size + 1, 2 * options.vote_patch_size + 1, 1), np.float)
+
+            for x in range(-options.vote_patch_size, options.vote_patch_size + 1):
+                for y in range(-options.vote_patch_size, options.vote_patch_size + 1):
+                    bodypart_vote[y + options.vote_patch_size, x + options.vote_patch_size] = 1.0 + np.exp(
+                        -0.5 * (x * x + y * y) / (np.square(options.vote_sigma))) / (options.vote_sigma * np.sqrt(2 * np.pi))
+
+            for i in range(0, len(test_annotation["Annotations"])):
+                frame_file = test_annotation["Annotations"][i]["FrameFile"]
+                frame_file = re.sub(".*/data/", "data/", frame_file)
+                frame_file = os.path.join(options.project_dir, frame_file)
+                #print frame_file
+                total_kp = 0
+
+                frame = cv2.imread(frame_file)
+
+                if (options.display_level >= 2):
+                    display_voters = frame.copy()
+
+                bodypart_coords_gt = None
+
+                for j in range(0, len(test_annotation["Annotations"][i]["FrameValueCoordinates"])):
+                    if (test_annotation["Annotations"][i]["FrameValueCoordinates"][j]["Name"] == test_bodypart and test_annotation["Annotations"][i]["FrameValueCoordinates"][j]["Value"]["x_coordinate"] != -1 and test_annotation["Annotations"][i]["FrameValueCoordinates"][j]["Value"]["y_coordinate"] != -1):
+                        bodypart_coords_gt = {}
+                        bodypart_coords_gt["x"] = int(test_annotation["Annotations"][i]["FrameValueCoordinates"][j]["Value"]["x_coordinate"])
+                        bodypart_coords_gt["y"] = int(test_annotation["Annotations"][i]["FrameValueCoordinates"][j]["Value"]["y_coordinate"])
+
+                bodypart_vote_map = np.zeros((np.shape(frame)[0], np.shape(frame)[1], 1), np.float)
+
+                kp_frame, desc_frame = surf.detectAndCompute(frame, None)
+                keypoint_length.append(kp_frame)
+                print "Number of Keypoints in Frame %d: %d" %(i, len(kp_frame))
+
+                for h, desc in enumerate(desc_frame):
+                    desc = np.array(desc, np.float32).reshape((1, 128))
+                    # retval_pos, results_pos, neigh_resp_pos, dists_pos = bodypart_knn_pos.find_nearest(desc, 1)
+                    # retval_neg, results_neg, neigh_resp_neg, dists_neg = bodypart_knn_neg.find_nearest(desc, 1)
+                    # r_pos, d_pos = int(results_pos[0][0]), dists_pos[0][0]
+                    # r_neg, d_neg = int(results_neg[0][0]), dists_neg[0][0]
+                    # neg_kp = neg_kp + 1
+
+                    r_pos_all, d_pos_all = bodypart_knn_pos.knnSearch(desc, 25, params = dict(checks = 8))
+                    print "Number of Pos Keypoints in Frame %d: %d" %(i, len(r_pos_all))
+                    pos_kp_length.append(len(r_pos_all))
+                    r_neg, d_neg = bodypart_knn_neg.knnSearch(desc, 1, params = dict(checks = 8))
+                    print "Number of Neg Keypoints in Frame %d: %d" %(i, len(r_neg))
+                    neg_kp_length.append(len(r_neg))
+
+                    for knn_id in range(0, np.shape(r_pos_all)[1]):
+                        r_pos = r_pos_all[:,knn_id]
+                        d_pos = d_pos_all[:,knn_id]
+                        relative_distance = d_pos - d_neg
+
+                        if (relative_distance <= options.desc_distance_threshold):
+                            # relative_distance = d_pos - d_neg
+                            # if (relative_distance <= options.desc_distance_threshold):
+                            total_kp = total_kp + 1
+                            # a = np.pi * kp_frame[h].angle / 180.0
+                            # R = np.array([[np.cos(a), -np.sin(a)], [np.sin(a), np.cos(a)]])
+                            # p = kp_frame[h].pt + np.dot(R, vote_train_pos[r_pos])
+                            # x, y = p
+                            # if (not (x <= options.vote_patch_size or x >= np.shape(frame)[1] - options.vote_patch_size or y <= options.vote_patch_size or y >= np.shape(frame)[0] - options.vote_patch_size)):
+                            #     bodypart_vote_map[y - options.vote_patch_size:y + options.vote_patch_size + 1,
+                            #     x - options.vote_patch_size:x + options.vote_patch_size + 1] += bodypart_vote
+                            #     if (options.display_level >= 2):
+                            #         cv2.circle(display_voters, (int(x), int(y)), 4, (0, 0, 255), thickness=-1)
+
+                # pos_kp_length.append(pos_kp)
+                # neg_kp_length.append(neg_kp)
+                print "Number of Total Keypoints in Frame %d: %d" %(i, total_kp)
+                total_kp_length.append(total_kp)
+
+                # if (options.display_level >= 2):
+                #     display_voters = cv2.resize(display_voters, (0, 0), fx=0.5, fy=0.5)
+                #     cv2.imshow("voters", display_voters)
+
+            #     vote_max = np.amax(bodypart_vote_map)
+            #     bodypart_vote_map /= vote_max
+            #     vote_max_loc = np.where(bodypart_vote_map == np.amax(bodypart_vote_map))
+            #
+            #     bodypart_coords_est = {}
+            #     bodypart_coords_est["x"] = int(vote_max_loc[1])
+            #     bodypart_coords_est["y"] = int(vote_max_loc[0])
+            #
+            #     if (bodypart_coords_gt is not None):
+            #         bodypart_error_dist = np.sqrt(np.square(bodypart_coords_gt["x"] - bodypart_coords_est["x"]) + np.square(bodypart_coords_gt["y"] - bodypart_coords_est["y"]))
+            #         print "Distance between annotated and estimated RightMHhook location:", bodypart_error_dist
+            #         bodypart_n_eval += 1
+            #         if (bodypart_error_dist <= options.outlier_error_dist):
+            #             bodypart_error_dists.append(bodypart_error_dist)
+            #         else:
+            #             bodypart_n_outlier_error_dist += 1
+            #
+            #     if (options.display_level >= 1):
+            #         display_vote_map = np.array(frame.copy(), np.float)
+            #         display_vote_map /= 255.0
+            #         display_vote_map[:, :, 2] = bodypart_vote_map[:, :, 0]
+            #         cv2.circle(display_vote_map, (bodypart_coords_est["x"], bodypart_coords_est["y"]), 4, (0, 255, 255), thickness=-1)
+            #         display_vote_map = cv2.resize(display_vote_map, (0, 0), fx=0.5, fy=0.5)
+            #         cv2.imshow("voters", display_vote_map)
+            #
+            #     if (options.save_dir_images != ""):
+            #         display_vote_map = np.array(frame.copy(), np.float)
+            #         display_vote_map /= 255.0
+            #         display_vote_map[:, :, 2] = bodypart_vote_map[:, :, 0]
+            #         cv2.circle(display_vote_map, (bodypart_coords_est["x"], bodypart_coords_est["y"]), 4, (0, 255, 255), thickness=-1)
+            #         save_folder=os.path.join(options.save_dir_images, os.path.splitext(os.path.basename(test_annotation_file))[0])
+            #         if not os.path.exists(save_folder):
+            #             os.makedirs(save_folder)
+            #         save_name=os.path.join(save_folder,os.path.splitext(os.path.basename(frame_file))[0]) + ".jpeg"
+            #         cv2.imwrite(save_name, display_vote_map*255, (cv2.cv.CV_IMWRITE_JPEG_QUALITY,50))
+            #
+            #     if (options.display_level >= 1):
+            #         # key_press =\
+            #         cv2.waitKey(500)
+            #         # if (key_press == 113 or key_press == 13):
+            #         #     break
+            #
+            # if (options.save_dir_error != ""):
+            #     error_content={"num_outliers": bodypart_n_outlier_error_dist,"outlier_error_thresh": options.outlier_error_dist,"proportion_outliers": float(bodypart_n_outlier_error_dist) / float(bodypart_n_eval),"median_error_dist": np.median(bodypart_error_dists),"mean_error_dist": np.mean(bodypart_error_dists),"frames_evaluated": bodypart_n_eval}
+            #     if not os.path.exists(options.save_dir_error):
+            #             os.makedirs(options.save_dir_error)
+            #     error_file= os.path.join(options.save_dir_error, os.path.splitext(os.path.basename(test_annotation_file))[0]) +'.json'
+            #     with open(error_file,'w+') as fout_error:
+            #         json.dump(error_content, fout_error, indent=4)
+
+    print os.sys.argv
+    # print "Number of outlier error distances (beyond %d) = %d / %d = %g" % (options.outlier_error_dist, bodypart_n_outlier_error_dist, bodypart_n_eval, float(bodypart_n_outlier_error_dist) / float(bodypart_n_eval) )
+    # print "Median inlier error dist =", np.median(bodypart_error_dists)
+    # print "Mean inlier error dist =", np.mean(bodypart_error_dists)
+    print "Average Number of Keypoints per frame: %g)" %(float(np.mean(keypoint_length)))
+
+    print "Average Number of Positive Keypoints Selected (per frame): %g" %(float(np.mean(pos_kp_length)))
+    print "Average Number of Negative Keypoints Selected (per frame): %g" %(float(np.mean(neg_kp_length)))
+    print "Average Number of Negative Keypoints Selected (per frame): %g" %(float(np.mean(total_kp_length)))
+    print "Maximum Keypoints: ", np.max(keypoint_length)
+    print "Minimum Keypoints: ", np.min(keypoint_length)
+
+    cv2.destroyWindow("frame")

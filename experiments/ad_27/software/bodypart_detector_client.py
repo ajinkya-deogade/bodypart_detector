@@ -1,0 +1,260 @@
+#! /usr/bin/env python
+
+from optparse import OptionParser
+import json
+from pprint import pprint
+import os
+import re
+import struct
+import cv2
+import numpy as np
+import socket
+import sys
+import copy
+
+packer_header = struct.Struct('= 2s I')
+packer_list_header = struct.Struct('= 2s I I f')
+packer_image_header = struct.Struct('= 2s I I I I')
+unpacker_ack_header = struct.Struct('= 2s I')
+
+class Error_Stats:
+    def __init__(self):
+        self.frame_file = None
+
+def main(options, args):
+    socks = []
+    server_free = []
+    n_server = options.n_server
+    for i in range(0, n_server):
+        socks.append(socket.socket(socket.AF_INET, socket.SOCK_STREAM) )
+        socks[i].connect(('', 9998 + i))
+        server_free.append(True)
+
+    test_bodypart = options.test_bodypart
+
+    test_annotations = []
+    with open(options.test_annotation_list) as fin_annotation_list:
+        for test_annotation_file in fin_annotation_list:
+            test_annotation_file = os.path.join(options.project_dir,re.sub(".*/data/", "data/", test_annotation_file.strip()))
+            with open(test_annotation_file) as fin_annotation:
+                test_annotation = json.load(fin_annotation)
+                test_annotations.extend(test_annotation["Annotations"])
+
+    print "len(test_annotations):" , len(test_annotations)
+
+    newCoordinateFile = os.path.join('../expts/test_results_' + test_bodypart.strip() + ".json")
+    fileWriter_newCoordinates = open(newCoordinateFile, 'w+')
+
+    d_pos_neg = (-0.100, -0.050, -0.010, -0.005, -0.001, 0, 0.001, 0.005, 0.010, 0.050, 0.100)
+    data_all = {}
+#    for j in range(10, 11):
+    for thresh in d_pos_neg:
+
+        frame_index = -1
+        error_stats_all = []
+        bodypart_gt = {}
+        n_frame_sent_to_server = 0
+        errors = {}
+        data_all["Dist_Pos_Neg_Thresh"] = thresh
+
+        for j in range(0, len(test_annotations)):
+            frame_index += 1
+
+            annotation = test_annotations[j]
+
+            frame_file = annotation["FrameFile"]
+            frame_file = re.sub(".*/data/", "data/", frame_file)
+            frame_file = os.path.join(options.project_dir, frame_file)
+            frame = cv2.imread(frame_file)
+            if (options.display_level >= 2):
+                display_voters = frame.copy()
+
+            bodypart_coords_gt = None
+            for k in range(0, len(annotation["FrameValueCoordinates"])):
+                if (annotation["FrameValueCoordinates"][k]["Name"] == test_bodypart and annotation["FrameValueCoordinates"][k]["Value"]["x_coordinate"] != -1 and annotation["FrameValueCoordinates"][k]["Value"]["y_coordinate"] != -1):
+                    bodypart_coords_gt = {}
+                    bodypart_coords_gt["x"] = int(annotation["FrameValueCoordinates"][k]["Value"]["x_coordinate"])
+                    bodypart_coords_gt["y"] = int(annotation["FrameValueCoordinates"][k]["Value"]["y_coordinate"])
+
+            if ( bodypart_coords_gt == None ):
+                continue
+
+            if ( options.verbosity >= 1 ):
+                print "frame_index:", frame_index
+
+            bodypart_gt[frame_index] = {}
+            bodypart_gt[frame_index]["bodypart_coords_gt"] = bodypart_coords_gt
+            bodypart_gt[frame_index]["frame_file"] = frame_file
+
+    #        for iteration in range(0, 1000):
+            for iteration in range(0, 1):
+                # perform detection
+                images = []
+                packed_image_headers = []
+                images_data = []
+
+                image = copy.deepcopy(frame)
+
+                if ( options.verbosity >= 1 ):
+                    print "bodypart_coords_gt:" , bodypart_coords_gt
+                crop_x = 0
+                crop_y = 0
+                # image = image[crop_y:crop_y+200,crop_x:crop_x+200,0]
+
+                images.append(copy.deepcopy(image))
+
+                image_info = np.shape(image)
+                if ( options.verbosity >= 1 ):
+                    print image_info
+                image_header = ('01', image_info[0], image_info[1], crop_x, crop_y)
+                packed_image_header = packer_image_header.pack(*image_header)
+                packed_image_headers.append(copy.deepcopy(packed_image_header))
+                image_data = np.getbuffer(np.ascontiguousarray(image))
+
+                if ( options.verbosity >= 1 ):
+                    print len(image_data)
+
+                images_data.append(image_data)
+
+                if ( options.verbosity >= 1 ):
+                    print len(images_data)
+
+                list_header = ('00', frame_index, len(images_data), thresh)
+                packed_list_header = packer_list_header.pack(*list_header)
+
+                blob_size = len(packed_list_header)
+                for k in range(0, len(images_data)):
+                    blob_size += len(packed_image_headers[k]) + len(images_data[k])
+
+                header = ('01', blob_size)
+                packed_header = packer_header.pack(*header)
+
+                received_json = None
+
+                for s in range(0, n_server):
+                    if ( server_free[s] ):
+                        try:
+                            if ( options.verbosity >= 1 ):
+                                print "trying to send packet to server", s
+
+                            socks[s].setblocking(1)
+
+                            socks[s].sendall(packed_header)
+
+                            socks[s].sendall(packed_list_header)
+
+                            for k in range(0, len(images_data)):
+                                socks[s].sendall(packed_image_headers[k])
+                                socks[s].sendall(images_data[k])
+
+                            if ( options.verbosity >= 1 ):
+                                print "Sent packet on server", s
+                            server_free[s] = False
+                            n_frame_sent_to_server += 1
+                        except:
+                            print "Unexpected error while sending:", sys.exc_info()[0]
+                            return
+                        finally:
+                            break
+
+                for s in range(0, n_server):
+                    if ( not server_free[s] ):
+                        # Receive data from the server and shut down
+                        bodypart_coords_est = None
+                        try:
+                            # socks[s].settimeout(1/1000.0)
+                            received = socks[s].recv(unpacker_ack_header.size)
+                            ack_header = unpacker_ack_header.unpack(received)
+                            if ( options.verbosity >= 1 ):
+                                print "received a packet from server; packet header:", ack_header[0]
+                            received = socks[s].recv(ack_header[1])
+                            server_free[s] = True
+                            if ( options.verbosity >= 1 ):
+                                print "Received from server {} : {}".format(s, received)
+                            received_json = json.loads(received)
+
+                            if ( "detections" in received_json ):
+                                for di in range(0, len(received_json["detections"])):
+                                    if ( "test_bodypart" in received_json["detections"][di] and received_json["detections"][di]["test_bodypart"] == test_bodypart ):
+                                        bodypart_coords_est = {}
+                                        bodypart_coords_est["x"] = received_json["detections"][di]["coord_x"]
+                                        bodypart_coords_est["y"] = received_json["detections"][di]["coord_y"]
+                                        bodypart_coords_est["conf"] = received_json["detections"][di]["conf"]
+                                        bodypart_coords_est["frame_index"] = received_json["detections"][di]["frame_index"]
+
+                        except socket.timeout:
+                            pass
+                        except:
+                            print "Unexpected error while receiving:", sys.exc_info()[0]
+
+                        if (bodypart_coords_est is not None):
+                            error_stats = Error_Stats()
+                            error_stats.frame_file =  bodypart_gt[bodypart_coords_est["frame_index"]]["frame_file"]
+                            error_stats.error_distance = np.sqrt(np.square(bodypart_gt[bodypart_coords_est["frame_index"]]["bodypart_coords_gt"]["x"] - bodypart_coords_est["x"]) +
+                                                                 np.square(bodypart_gt[bodypart_coords_est["frame_index"]]["bodypart_coords_gt"]["y"] - bodypart_coords_est["y"]))
+                            error_stats.conf = bodypart_coords_est["conf"]
+                            if ( options.verbosity >= 1 ):
+                                print bodypart_gt[bodypart_coords_est["frame_index"]]["frame_file"], "Distance between annotated and estimated RightMHhook location:", error_stats.error_distance
+                            error_stats_all.append(error_stats)
+
+                if ( options.verbosity >= 1 ):
+                    print server_free
+
+        print os.sys.argv
+        error_distance_inliers = []
+        inlier_confs = []
+        outlier_confs = []
+        errors["DistanceAll"] = []
+        for es in error_stats_all:
+            errors["DistanceAll"].append(es.error_distance)
+            if (es.error_distance <= options.outlier_error_dist):
+                error_distance_inliers.append(es.error_distance)
+                inlier_confs.append(es.conf)
+            else:
+                outlier_confs.append(es.conf)
+
+        n_outlier = len(error_stats_all) - len(error_distance_inliers)
+
+        print "Total number of frames sent to server:", n_frame_sent_to_server
+        print "Total number of detections received:", len(error_stats_all)
+        percentage_outliers = float(n_outlier) / max(1, float(len(error_stats_all))) * 100
+        print "Number of outlier error distances (beyond %d) = %d / %d = %g" % (options.outlier_error_dist, n_outlier, len(error_stats_all), float(n_outlier) / max(1, float(len(error_stats_all))) )
+        if ( len(error_distance_inliers) > 0 ):
+            print "Median inlier error dist =", np.median(error_distance_inliers)
+            print "Mean inlier error dist =", np.mean(error_distance_inliers)
+            print "Min inlier confidence =", np.min(inlier_confs)
+            print "Mean inlier confidence =", np.mean(inlier_confs)
+        if ( len(outlier_confs) > 0 ):
+            print "Max outlier confidence =", np.max(outlier_confs)
+            print "Mean outlier confidence =", np.mean(outlier_confs)
+        print "len(bodypart_gt):", len(bodypart_gt)
+
+        errors["PercentageOutliers"] = percentage_outliers
+        errors["TotalFrames"] = len(error_stats_all)
+        errors["MedianInlierDistance"] = np.median(error_distance_inliers)
+        errors["MeanInlierDistance"] = np.mean(error_distance_inliers)
+        errors["MeanInlierConfidence"] = np.mean(inlier_confs)
+        errors["MeanInlierConfidence"] = np.mean(inlier_confs)
+        errors["MeanOutlierConfidence"] = np.mean(outlier_confs)
+        errors["MeanInlierConfidence"] = np.mean(error_distance_inliers)
+        errors["BodyPart"] = options.test_bodypart
+        errors["OutlierThreshold"] = options.outlier_error_dist
+        data_all["ErrorDat"] = errors
+    json.dump(data_all, fileWriter_newCoordinates, sort_keys=True, indent=4, separators=(',', ': '))
+    fileWriter_newCoordinates.close()
+    cv2.destroyWindow("frame")
+
+
+if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option("", "--test-annotation-list", dest="test_annotation_list_fpgaKNNVal", default="",help="list of testing annotation JSON file")
+    parser.add_option("", "--project-path", dest="project_dir", default="", help="path containing data directory")
+    parser.add_option("", "--outlier-error-dist", dest="outlier_error_dist", type="int", default=15,help="distance beyond which errors are considered outliers when computing average stats")
+    parser.add_option("", "--display", dest="display_level", default=0, type="int",help="display intermediate and final results visually, level 5 for all, level 1 for final, level 0 for none")
+    parser.add_option("", "--n-server", dest="n_server", default=1, type="int",help="number of servers available")
+    parser.add_option("", "--test-bodypart", dest="test_bodypart",default="MouthHook", help="Input the bodypart to be tested")
+    parser.add_option("", "--verbosity", dest="verbosity", type="int", default=0, help="degree of verbosity")
+
+    (options, args) = parser.parse_args()
+
+    main(options, args)

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+set -u
+set -x
+
+source ./sourceme
+
+mkdir -vp ../expts
+
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9988 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9989 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9990 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9991 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9992 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9993 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9994 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9995 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9996 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9997 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9998 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 9999 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 10000 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 10001 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 10002 &
+./bodypart_detector_server.py --positive-training-datafile ../expts/train_pos_RightDO.p --negative-training-datafile ../expts/train_neg_RightDO.p --desc-dist-threshold -0.01 --vote-patch-size 10 --vote-sigma 5 --display 0 --socket-port 10003 &

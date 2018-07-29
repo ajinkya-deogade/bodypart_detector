@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+set -u
+set -x
+
+source ./sourceme
+
+mkdir -vp ../expts
+
+./stamp_coordinates.py --project-path "${PROJECT_PATH}/" --estimated-coordinate-file ../expts/test_results_20141219.json --display 1
+
+

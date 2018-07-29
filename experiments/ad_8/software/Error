@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "./ex_MHhook_detection_train.py", line 179, in <module>
+    main(options, args)
+  File "./ex_MHhook_detection_train.py", line 137, in main
+    results = process_pool.map(get_train_features, train_annotation["Annotations"])
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+/Volumes/HD2/MHDO_Tracking//data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Frames_All5/4_20140213R_Frames_20140605_124137/000151_4_20140213R_033151.tiff
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+ValueError: need more than 0 values to unpack

@@ -1,0 +1,106 @@
+public List<LEDStimulus> determineStimulus(List<LarvaFrameData> frameHistory,
+                                               LarvaBehaviorParameters behaviorParameters) {
+
+        final LarvaFrameData frameData = frameHistory.get(0);
+        final long captureTime = frameData.getTime();
+
+        List<LEDStimulus> stimulusList;
+
+        if (captureTime >= noStimulusStartDuration) {
+
+            if (frameData.isRunning()) {
+
+                if (lastSampleTime == null) {
+
+
+                } else {
+
+                    // not sure if larva is truly running, so just maintain current intensity
+                    endSamplingBoutAsNeeded(frameData, captureTime);
+
+                }
+
+            } else if (isSampling(frameData)) {
+
+               if (lastSampleTime == null) { // start sampling bout
+
+                   currentSampleBaseIntensity = currentIntensity;
+
+                   boutCount++;
+                   if (boutCount > boutsBeforeReset) {
+                       boutCount = 0;
+
+                       logRuleData(captureTime, "bout reset", String.valueOf(currentIntensity));
+                       currentIntensity = baselineIntensityPercentage.getValue();
+                   }
+
+                   logRuleData(captureTime, "sampling bout", "start");
+                   setCurrentSamplingFunction(captureTime);
+
+               }
+
+                lastSampleTime = captureTime;
+
+                final double intensityAddend = currentSamplingFunction.getValue(frameData);
+                currentIntensity = currentSampleBaseIntensity + intensityAddend;
+
+            } else if (lastSampleTime != null) { // maintain current intensity
+
+                endSamplingBoutAsNeeded(frameData, captureTime);
+
+            } // else maintain current intensity
+
+            if ((currentIntensity < resetMinimumIntensityPercentage) ||
+                (currentIntensity > resetMaximumIntensityPercentage)) {
+
+                logRuleData(captureTime, RuleData.BOUNDS_RESET, String.valueOf(currentIntensity));
+                currentIntensity = baselineIntensityPercentage.getValue();
+                rampStartTime = captureTime; // reset ramp as well
+                rampStartIntensity = currentIntensity;
+            }
+
+            stimulusList = getStimulusList(currentIntensity);
+            intensityFilterFunctionList.applyValues(frameData, stimulusList, 0.0);
+
+        } else {
+
+            stimulusList = ZERO_INTENSITY_FOR_ONE_SECOND;
+
+        }
+
+        return stimulusList;
+    }
+
+    private void endSamplingBoutAsNeeded(final LarvaFrameData frameData, final long captureTime) {
+        final long elapsedSinceLastSample = frameData.getTime() - lastSampleTime;
+        if (elapsedSinceLastSample >= maintainSamplingModeDuration) {
+            lastSampleTime = null;
+            logRuleData(captureTime, "sampling bout", "stop");
+        }
+    }
+
+    private boolean isSampling(final LarvaFrameData frameData) {
+        return frameData.isCasting() || (includeTurnsInSampling && frameData.isTurning());
+    }
+
+    private void setCurrentSamplingFunction(long captureTime) {
+        if ((numberOfAdditiveSamplingFunctions > 1) && (numberOfAdditiveSamplingFunctions < 4)) {
+            final KinematicVariableFunction[] functions = { samplingFunction, samplingFunction2, samplingFunction3 };
+            final int functionIndex = randomSamplingFunctionSelector.nextInt(numberOfAdditiveSamplingFunctions);
+            currentSamplingFunction = functions[functionIndex];
+            logRuleData(captureTime, RuleData.SAMPLING_FUNCTION_NAME, String.valueOf(functionIndex));
+        } else {
+            currentSamplingFunction = samplingFunction;
+        }
+    }
+}
+
+for each frame
+    if is sampling ## defined as in  biorule 8.8
+        if head going away from the body ## defined by
+            intensityApplied = baseline + get intensity from the selected function
+            presentIntensity = intensity
+        else
+            intensityApplied = presentIntensity
+     else
+        intensityApplied = baseline

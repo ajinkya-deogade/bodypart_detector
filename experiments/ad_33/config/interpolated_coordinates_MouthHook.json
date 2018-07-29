@@ -1,0 +1,2630 @@
+{
+    "0": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s60_t1_clip_001.mp4"
+    },
+    "1": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s60_t1_clip_001.mp4"
+    },
+    "2": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s120_t1_clip_001.mp4"
+    },
+    "3": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s150_e1_clip_001.mp4"
+    },
+    "4": {
+        "Coordinates": {
+            "1": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 1,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "2": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 2,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "3": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 3,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "4": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 4,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "5": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 5,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "6": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 6,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "7": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 7,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "8": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 8,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "9": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 9,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "10": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 10,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "11": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 11,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "12": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 12,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "13": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 13,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "14": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 14,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "15": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 15,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "16": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 16,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            }
+        },
+        "Frame_Sequence": {
+            "0": {
+                "EndFrame": 17,
+                "StartFrame": 1
+            }
+        },
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s180_t1_clip_001.mp4"
+    },
+    "5": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s240_e1_clip_001.mp4"
+    },
+    "6": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140213R_s270_e1_clip_001.mp4"
+    },
+    "7": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140214R_s60_t1_clip_001.mp4"
+    },
+    "8": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140214R_s120_t1_clip_001.mp4"
+    },
+    "9": {
+        "Coordinates": {
+            "1": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 1,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "2": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 2,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "3": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 3,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "4": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 4,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "5": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 5,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "6": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 6,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "7": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 7,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "8": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 8,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "9": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 9,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "10": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 10,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "11": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 11,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "12": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 12,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "13": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 13,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "14": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 14,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "15": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 15,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "16": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 16,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "17": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 17,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "18": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 18,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "19": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 19,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "20": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 20,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "21": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 21,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "22": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 22,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "23": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 23,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "24": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 24,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "25": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 25,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "26": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 26,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "27": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 27,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "28": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 28,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "29": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 29,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "30": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 30,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "31": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 31,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "32": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 32,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "33": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 33,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "34": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 34,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "35": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 35,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "36": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 36,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "37": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 37,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "38": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 38,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "39": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 39,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "40": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 40,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "41": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 41,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "42": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 42,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "43": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 43,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "44": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 44,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "45": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 45,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "46": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 46,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            }
+        },
+        "Frame_Sequence": {
+            "0": {
+                "EndFrame": 47,
+                "StartFrame": 1
+            }
+        },
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140214R_s150_e1_clip_001.mp4"
+    },
+    "10": {
+        "Coordinates": {
+            "1": {
+                "Annotated": {
+                    "x": 1583,
+                    "y": 1183
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 1,
+                "Interpolated": {
+                    "x": 1583,
+                    "y": 1183
+                }
+            },
+            "2": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 2,
+                "Interpolated": {
+                    "x": 1580,
+                    "y": 1184
+                }
+            },
+            "3": {
+                "Annotated": {
+                    "x": 1577,
+                    "y": 1185
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 3,
+                "Interpolated": {
+                    "x": 1577,
+                    "y": 1185
+                }
+            },
+            "4": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 4,
+                "Interpolated": {
+                    "x": 1577,
+                    "y": 1185
+                }
+            },
+            "5": {
+                "Annotated": {
+                    "x": 1577,
+                    "y": 1185
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 5,
+                "Interpolated": {
+                    "x": 1577,
+                    "y": 1185
+                }
+            },
+            "6": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 6,
+                "Interpolated": {
+                    "x": 1578,
+                    "y": 1186
+                }
+            },
+            "7": {
+                "Annotated": {
+                    "x": 1579,
+                    "y": 1187
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 7,
+                "Interpolated": {
+                    "x": 1579,
+                    "y": 1187
+                }
+            },
+            "8": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 8,
+                "Interpolated": {
+                    "x": 1579,
+                    "y": 1187
+                }
+            },
+            "9": {
+                "Annotated": {
+                    "x": 1579,
+                    "y": 1187
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 9,
+                "Interpolated": {
+                    "x": 1579,
+                    "y": 1187
+                }
+            },
+            "10": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 10,
+                "Interpolated": {
+                    "x": 1585,
+                    "y": 1187
+                }
+            },
+            "11": {
+                "Annotated": {
+                    "x": 1591,
+                    "y": 1187
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 11,
+                "Interpolated": {
+                    "x": 1591,
+                    "y": 1187
+                }
+            },
+            "12": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 12,
+                "Interpolated": {
+                    "x": 1585,
+                    "y": 1187
+                }
+            },
+            "13": {
+                "Annotated": {
+                    "x": 1579,
+                    "y": 1187
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 13,
+                "Interpolated": {
+                    "x": 1579,
+                    "y": 1187
+                }
+            },
+            "14": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 14,
+                "Interpolated": {
+                    "x": 1583,
+                    "y": 1185
+                }
+            },
+            "15": {
+                "Annotated": {
+                    "x": 1587,
+                    "y": 1183
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 15,
+                "Interpolated": {
+                    "x": 1587,
+                    "y": 1183
+                }
+            },
+            "16": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 16,
+                "Interpolated": {
+                    "x": 793,
+                    "y": 591
+                }
+            },
+            "17": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 17,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "18": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 18,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "19": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 19,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "20": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 20,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "21": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 21,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "22": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 22,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "23": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 23,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "24": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 24,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "25": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 25,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "26": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 26,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "27": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 27,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "28": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 28,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "29": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 29,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "30": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 30,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "31": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 31,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "32": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 32,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "33": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 33,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "34": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 34,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "35": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 35,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "36": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 36,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "37": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 37,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "38": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 38,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "39": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 39,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "40": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 40,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "41": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 41,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "42": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 42,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "43": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 43,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "44": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 44,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "45": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 45,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "46": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 46,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "47": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 47,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "48": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 48,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "49": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 49,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "50": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 50,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "51": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 51,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "52": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 52,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "53": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 53,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "54": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 54,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "55": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 55,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "56": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 56,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "57": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 57,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "58": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 58,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "59": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 59,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "60": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 60,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "61": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 61,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "62": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 62,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "63": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 63,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "64": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 64,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            }
+        },
+        "Frame_Sequence": {
+            "0": {
+                "EndFrame": 65,
+                "StartFrame": 1
+            }
+        },
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140214R_s180_t1_clip_001.mp4"
+    },
+    "11": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140214R_s240_e1_clip_001.mp4"
+    },
+    "12": {
+        "Coordinates": {
+            "1": {
+                "Annotated": {
+                    "x": 1279,
+                    "y": 1673
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 1,
+                "Interpolated": {
+                    "x": 1279,
+                    "y": 1673
+                }
+            },
+            "2": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 2,
+                "Interpolated": {
+                    "x": 1280,
+                    "y": 1675
+                }
+            },
+            "3": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1677
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 3,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1677
+                }
+            },
+            "4": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 4,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1675
+                }
+            },
+            "5": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1673
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 5,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1673
+                }
+            },
+            "6": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 6,
+                "Interpolated": {
+                    "x": 1282,
+                    "y": 1676
+                }
+            },
+            "7": {
+                "Annotated": {
+                    "x": 1283,
+                    "y": 1679
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 7,
+                "Interpolated": {
+                    "x": 1283,
+                    "y": 1679
+                }
+            },
+            "8": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 8,
+                "Interpolated": {
+                    "x": 1282,
+                    "y": 1681
+                }
+            },
+            "9": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1683
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 9,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1683
+                }
+            },
+            "10": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 10,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1677
+                }
+            },
+            "11": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1671
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 11,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1671
+                }
+            },
+            "12": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 12,
+                "Interpolated": {
+                    "x": 1279,
+                    "y": 1671
+                }
+            },
+            "13": {
+                "Annotated": {
+                    "x": 1277,
+                    "y": 1671
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 13,
+                "Interpolated": {
+                    "x": 1277,
+                    "y": 1671
+                }
+            },
+            "14": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 14,
+                "Interpolated": {
+                    "x": 1274,
+                    "y": 1671
+                }
+            },
+            "15": {
+                "Annotated": {
+                    "x": 1271,
+                    "y": 1671
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 15,
+                "Interpolated": {
+                    "x": 1271,
+                    "y": 1671
+                }
+            },
+            "16": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 16,
+                "Interpolated": {
+                    "x": 1276,
+                    "y": 1671
+                }
+            },
+            "17": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1671
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 17,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1671
+                }
+            },
+            "18": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 18,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1664
+                }
+            },
+            "19": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1657
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 19,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1657
+                }
+            },
+            "20": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 20,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1646
+                }
+            },
+            "21": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1635
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 21,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1635
+                }
+            },
+            "22": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 22,
+                "Interpolated": {
+                    "x": 1284,
+                    "y": 1638
+                }
+            },
+            "23": {
+                "Annotated": {
+                    "x": 1287,
+                    "y": 1641
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 23,
+                "Interpolated": {
+                    "x": 1287,
+                    "y": 1641
+                }
+            },
+            "24": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 24,
+                "Interpolated": {
+                    "x": 1284,
+                    "y": 1641
+                }
+            },
+            "25": {
+                "Annotated": {
+                    "x": 1281,
+                    "y": 1641
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 25,
+                "Interpolated": {
+                    "x": 1281,
+                    "y": 1641
+                }
+            },
+            "26": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 26,
+                "Interpolated": {
+                    "x": 1283,
+                    "y": 1641
+                }
+            },
+            "27": {
+                "Annotated": {
+                    "x": 1285,
+                    "y": 1641
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 27,
+                "Interpolated": {
+                    "x": 1285,
+                    "y": 1641
+                }
+            },
+            "28": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 28,
+                "Interpolated": {
+                    "x": 642,
+                    "y": 820
+                }
+            },
+            "29": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 29,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "30": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 30,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "31": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 31,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "32": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 32,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "33": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 33,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "34": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 34,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "35": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 35,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "36": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 36,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "37": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 37,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "38": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 38,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "39": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 39,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "40": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 40,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "41": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 41,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "42": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 42,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "43": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 43,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "44": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 44,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            }
+        },
+        "Frame_Sequence": {
+            "0": {
+                "EndFrame": 45,
+                "StartFrame": 1
+            }
+        },
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/1_20140214R_s270_e1_clip_001.mp4"
+    },
+    "13": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s60_t1_clip_001.mp4"
+    },
+    "14": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s120_t1_clip_001.mp4"
+    },
+    "15": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s150_e1_clip_001.mp4"
+    },
+    "16": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s180_t1_clip_001.mp4"
+    },
+    "17": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s60_t1_clip_001.mp4"
+    },
+    "18": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s120_t1_clip_001.mp4"
+    },
+    "19": {
+        "Coordinates": {
+            "1": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 1,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "2": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 2,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "3": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 3,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "4": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 4,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "5": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 5,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "6": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 6,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "7": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 7,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "8": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 8,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "9": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 9,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "10": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 10,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "11": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 11,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "12": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 12,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            }
+        },
+        "Frame_Sequence": {
+            "0": {
+                "EndFrame": 13,
+                "StartFrame": 1
+            }
+        },
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s120_t1_clip_001.mp4"
+    },
+    "20": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s150_e1_clip_001.mp4"
+    },
+    "21": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140213R_s180_t1_clip_001.mp4"
+    },
+    "22": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s60_t1_clip_001.mp4"
+    },
+    "23": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s120_t1_clip_001.mp4"
+    },
+    "24": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s150_e1_clip_001.mp4"
+    },
+    "25": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s180_t1_clip_001.mp4"
+    },
+    "26": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s240_e1_clip_001.mp4"
+    },
+    "27": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/2_20140214R_s270_e1_clip_001.mp4"
+    },
+    "28": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140213R_s60_t1_clip_001.mp4"
+    },
+    "29": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140213R_s120_t1_clip_001.mp4"
+    },
+    "30": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140213R_s180_t1_clip_001.mp4"
+    },
+    "31": {
+        "Coordinates": {
+            "1": {
+                "Annotated": {
+                    "x": 831,
+                    "y": 325
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 1,
+                "Interpolated": {
+                    "x": 831,
+                    "y": 325
+                }
+            },
+            "2": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 2,
+                "Interpolated": {
+                    "x": 829,
+                    "y": 326
+                }
+            },
+            "3": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 3,
+                "Interpolated": {
+                    "x": 828,
+                    "y": 326
+                }
+            },
+            "4": {
+                "Annotated": {
+                    "x": 827,
+                    "y": 327
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 4,
+                "Interpolated": {
+                    "x": 827,
+                    "y": 327
+                }
+            },
+            "5": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 5,
+                "Interpolated": {
+                    "x": 826,
+                    "y": 340
+                }
+            },
+            "6": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 6,
+                "Interpolated": {
+                    "x": 825,
+                    "y": 353
+                }
+            },
+            "7": {
+                "Annotated": {
+                    "x": 825,
+                    "y": 353
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 7,
+                "Interpolated": {
+                    "x": 825,
+                    "y": 353
+                }
+            },
+            "8": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 8,
+                "Interpolated": {
+                    "x": 824,
+                    "y": 363
+                }
+            },
+            "9": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 9,
+                "Interpolated": {
+                    "x": 823,
+                    "y": 373
+                }
+            },
+            "10": {
+                "Annotated": {
+                    "x": 823,
+                    "y": 373
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 10,
+                "Interpolated": {
+                    "x": 823,
+                    "y": 373
+                }
+            },
+            "11": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 11,
+                "Interpolated": {
+                    "x": 823,
+                    "y": 374
+                }
+            },
+            "12": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 12,
+                "Interpolated": {
+                    "x": 823,
+                    "y": 375
+                }
+            },
+            "13": {
+                "Annotated": {
+                    "x": 823,
+                    "y": 377
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 13,
+                "Interpolated": {
+                    "x": 823,
+                    "y": 377
+                }
+            },
+            "14": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 14,
+                "Interpolated": {
+                    "x": 548,
+                    "y": 250
+                }
+            },
+            "15": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 15,
+                "Interpolated": {
+                    "x": 273,
+                    "y": 124
+                }
+            },
+            "16": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 16,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "17": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 17,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "18": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 18,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "19": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 19,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "20": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 20,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "21": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 21,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "22": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 22,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "23": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 23,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "24": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 24,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "25": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 25,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "26": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 26,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "27": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 27,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "28": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 28,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "29": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 29,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "30": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 30,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "31": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 31,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "32": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 32,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "33": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 33,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "34": {
+                "Annotated": {
+                    "x": -1,
+                    "y": -1
+                },
+                "Estimated": {},
+                "FrameIndexVideo": 34,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "35": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 35,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            },
+            "36": {
+                "Annotated": {},
+                "Estimated": {},
+                "FrameIndexVideo": 36,
+                "Interpolated": {
+                    "x": -1,
+                    "y": -1
+                }
+            }
+        },
+        "Frame_Sequence": {
+            "0": {
+                "EndFrame": 37,
+                "StartFrame": 1
+            }
+        },
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140213R_s180_t1_clip_001.mp4"
+    },
+    "32": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140214R_s60_t1_clip_001.mp4"
+    },
+    "33": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140214R_s120_t1_clip_001.mp4"
+    },
+    "34": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140214R_s150_e1_clip_001.mp4"
+    },
+    "35": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140214R_s180_t1_clip_001.mp4"
+    },
+    "36": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/3_20140214R_s240_e1_clip_001.mp4"
+    },
+    "37": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/4_20140213R_s60_t1_clip_001.mp4"
+    },
+    "38": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/4_20140214R_s60_t1_clip_001.mp4"
+    },
+    "39": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/5_20140213R_s60_t1_clip_001.mp4"
+    },
+    "40": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/5_20140214R_s60_t1_clip_001.mp4"
+    },
+    "41": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/6_20140213R_s60_t1_clip_001.mp4"
+    },
+    "42": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/6_20140214R_s60_t1_clip_001.mp4"
+    },
+    "43": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/7_20140213R_s60_t1_clip_001.mp4"
+    },
+    "44": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/7_20140214R_s60_t1_clip_001.mp4"
+    },
+    "45": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/8_20140213R_s60_t1_clip_001.mp4"
+    },
+    "46": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/8_20140214R_s60_t1_clip_001.mp4"
+    },
+    "47": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/9_20140213R_s60_t1_clip_001.mp4"
+    },
+    "48": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/9_20140214R_s60_t1_clip_001.mp4"
+    },
+    "49": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/10_20140213R_s60_t1_clip_001.mp4"
+    },
+    "50": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/10_20140214R_s60_t1_clip_001.mp4"
+    },
+    "51": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/11_20140214R_s60_t1_clip_001.mp4"
+    },
+    "52": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/12_20140213R_s60_t1_clip_001.mp4"
+    },
+    "53": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/12_20140214R_s60_t1_clip_001.mp4"
+    },
+    "54": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/13_20140214R_s60_t1_clip_001.mp4"
+    },
+    "55": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/14_20140213R_s60_t1_clip_001.mp4"
+    },
+    "56": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/14_20140214R_s60_t1_clip_001.mp4"
+    },
+    "57": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/15_20140213R_s60_t1_clip_001.mp4"
+    },
+    "58": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/15_20140214R_s60_t1_clip_001.mp4"
+    },
+    "59": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/16_20140213R_s60_t1_clip_001.mp4"
+    },
+    "60": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/16_20140214R_s60_t1_clip_001.mp4"
+    },
+    "61": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/17_20140213R_s60_t1_clip_001.mp4"
+    },
+    "62": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/17_20140214R_s60_t1_clip_001.mp4"
+    },
+    "63": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/18_20140213R_s60_t1_clip_001.mp4"
+    },
+    "64": {
+        "Coordinates": {},
+        "Frame_Sequence": {},
+        "VideoFile": "/Volumes/HD2/MHDO_Tracking/data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Clips/18_20140214R_s60_t1_clip_001.mp4"
+    },
+    "TotalLength_Consecutive_Detections": [],
+    "TotalLength_Not_Consecutive_Detections": []
+}
