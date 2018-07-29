@@ -1,0 +1,17 @@
+logs
+expts
+*.avi
+.*
+sourceme
+*.pyc
+*.csv
+*.tiff
+*.tif
+*.mp4
+*.jpeg
+*.jpg
+*~
+*.zip
+*.gzip
+*.tar
+.idea
