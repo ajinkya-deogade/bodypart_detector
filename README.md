@@ -1,4 +1,4 @@
-# Real-time animal body-part detection - development
+# Real-time animal body-part detection - development version
 
 This is the development version for real-time bodypart detection algorithm. Contains various experiments conducted to acheive detection at 150 fps. 
 
