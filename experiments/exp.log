@@ -27,24 +27,7 @@ sv_7 copy of ad_5 which would detect general body point, positive and negative f
 
 ad_6 copied from sv_7; modification: As after parallelizing the program was not able to save into different directory for a particular video, changed the code to make a new folder to save predicted frames for every video.
 
-Tried out different desc_threshold values (-0.03,-0.02,-0.01,-0.005,-0.0025,0,0.0025,0.005,0.01) and got the respective Number of outlier error distances (Ran with errors,3.264094955,3.264094955,3.264094955, ,2.37388724,2.37388724,3.264094955).
-Important thing to note is for the relative distance of -0.03 the program gave the following error. Maybe because there was no feature point below this threshold.
-
 ad_6; Following error occurring number of times for different videos.
-
-Error:
-101: RuntimeWarning: invalid value encountered in divide
-  bodypart_vote_map /= vote_max
-Traceback (most recent call last):
-  File "./ex_MHhook_detection_test.py", line 206, in <module>
-    main(options, args)
-  File "./ex_MHhook_detection_test.py", line 172, in main
-    results = process_pool.map(detect_bodypart_and_get_error_distances, test_annotations)
-  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 250, in map
-    return self.map_async(func, iterable, chunksize).get()
-  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 554, in get
-    raise self._value
-IndexError: index 0 is out of bounds for axis 1 with size 0
 
 ad_5; Same Error as above.
 
@@ -59,20 +42,8 @@ sv_9 Initial client server framework. Client pushes a header (version-id, blob-s
 sv_10 Client server framework with client sending images.
 
 ad_8; Copied from sv_7; Having following error for different files during training phase
-Traceback (most recent call last):
-  File "./ex_MHhook_detection_train.py", line 179, in <module>
-    main(options, args)
-  File "./ex_MHhook_detection_train.py", line 137, in main
-    results = process_pool.map(get_train_features, train_annotation["Annotations"])
-  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 250, in map
-    return self.map_async(func, iterable, chunksize).get()
-/Volumes/HD2/MHDO_Tracking//data/Janelia_Q1_2014/RingLED/MPEG4/Extracted_Frames_All5/4_20140213R_Frames_20140605_124137/000151_4_20140213R_033151.tiff
-  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/pool.py", line 554, in get
-    raise self._value
-ValueError: need more than 0 values to unpack
 
 ad_9; Copied from ad_5; Tried training with normal (not multithreaded)
-Program stops after reading few frames without showing any errors.
 
 sv_11 Client server framework with client sending multiple images at one time to handle the case of one image coming from head and one from tail.
 
