@@ -10,9 +10,13 @@ sourceme
 *.mp4
 *.jpeg
 *.jpg
+*.png
+*.pdf
 *~
 *.zip
 *.gzip
 *.tar
 .idea
 *.pkl
+*.dat
+
